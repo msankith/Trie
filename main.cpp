@@ -3,6 +3,7 @@
 #include<vector>
 #include<string>
 #include<set>
+#include<algorithm>
 #include"Trie.h"
 
 using namespace std;
@@ -74,6 +75,7 @@ int main()
 			{
 				string s;
 				cin>>s;
+				transform(s.begin(), s.end(), s.begin(), ::tolower);
 				int count=0;
 				set<string> suggestions;
 				vector<string> edit_list;
@@ -115,6 +117,8 @@ int main()
 			{
 				string s;
 				cin>>s;
+				transform(s.begin(), s.end(), s.begin(), ::tolower);
+				
 				vector<string> autoCompleteList;
 				trie->autoComplete(s,autoCompleteList);
 	
@@ -155,8 +159,11 @@ int main()
 				
 				while(!input.eof())
 				{
-					char s[300];
-					input >> s;
+					char d[300];
+					input >> d;
+					string s=d;
+					transform(s.begin(), s.end(), s.begin(), ::tolower);
+				
 				int count=0;
 				set<string> suggestions;
 				vector<string> edit_list;
@@ -218,9 +225,11 @@ int main()
 				
 				while(!input.eof())
 				{
-					char s[300];
-					input >> s;
-					vector<string> autoCompleteList;
+					char d[300];
+					input >> d;
+					string s=d;
+					transform(s.begin(), s.end(), s.begin(), ::tolower);
+								vector<string> autoCompleteList;
 					trie->autoComplete(s,autoCompleteList);
 	
 					if(autoCompleteList.size()==0)
