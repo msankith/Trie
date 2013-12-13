@@ -179,11 +179,11 @@ int main()
 						}
 					}
 					if(count==0){
-						output<<"No suggestions"<<endl;
+						output<<s<<" No suggestions"<<endl;
 					}
 					else
 					{		
-						output<<"Did you mean"<<endl;
+						output<<s<<" Did you mean"<<endl;
 						set<string>::iterator itr;
 						for(itr=suggestions.begin();itr!=suggestions.end();itr++)
 							output<<*itr<<endl;
@@ -225,11 +225,11 @@ int main()
 	
 					if(autoCompleteList.size()==0)
 					{
-					output<<"No suggestions"<<endl;
+					output<<s<<"No suggestions"<<endl;
 					}
 					else
 					{
-						output<<"Autocomplete reply :"<<endl;
+						output<<s<<" Autocomplete reply :"<<endl;
 						for(int i=0;i<autoCompleteList.size();i++)
 						{
 							output<<autoCompleteList[i]<<endl;
